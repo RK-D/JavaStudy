@@ -1,4 +1,4 @@
-package Multithreading.threadcorebasic.wangways;
+package multithreading.threadcorebasic.wangways;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

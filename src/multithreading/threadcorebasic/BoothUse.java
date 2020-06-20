@@ -1,6 +1,4 @@
-package Multithreading.threadcorebasic;
-
-import sun.management.snmp.jvminstr.JvmOSImpl;
+package multithreading.threadcorebasic;
 
 /**
  * @author rookie

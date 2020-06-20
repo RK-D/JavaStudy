@@ -1,4 +1,4 @@
-package Multithreading.threadcorebasic;
+package multithreading.threadcorebasic;
 
 /**
  * @author rookie
