@@ -4,7 +4,7 @@ package Multithreading.threadcorebasic;
  * @author rookie
  * @version 1.0
  * @date 2020/6/20 10:31
- * Runnable方式创建线程
+ * Runnable方式创建线程 更好
  */
 public class RunnableStyle implements Runnable {
     public static void main(String[] args) {
