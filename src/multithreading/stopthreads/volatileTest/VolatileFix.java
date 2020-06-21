@@ -1,4 +1,4 @@
-package multithreading.stopthreads;
+package multithreading.stopthreads.volatileTest;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -8,17 +8,17 @@ import java.util.concurrent.BlockingQueue;
  * @version 1.0
  * @date 2020/6/21 1:13
  *
- * 中断修复 死循环，阻塞死情况
+ * 中断修复 死循环，阻塞死情况，中断修复，启用volatile标记
  */
 public class VolatileFix {
 
     public static void main(String[] args) throws InterruptedException {
         ArrayBlockingQueue storage = new ArrayBlockingQueue(10);
-        multithreading.stopthreads.Producer producer = new multithreading.stopthreads.Producer(storage);
+        multithreading.stopthreads.volatileTest.Producer producer = new multithreading.stopthreads.volatileTest.Producer(storage);
         Thread producerThread = new Thread(producer);
         producerThread.start();
         Thread.sleep(1000);
-        multithreading.stopthreads.Consumer consumer = new multithreading.stopthreads.Consumer(storage);
+        multithreading.stopthreads.volatileTest.Consumer consumer = new multithreading.stopthreads.volatileTest.Consumer(storage);
         while (consumer.needMoreNums()){
             System.out.println(consumer.storage.take()+"被消费");
             Thread.sleep(100);
@@ -26,6 +26,9 @@ public class VolatileFix {
         }
         System.out.println("消费者不需要数据了");
        producerThread.interrupt();
+       Thread.interrupted();
+//       producerThread.isInterrupted();
+
         System.out.println(producer.canceled);
     }
     static class Producer implements Runnable{

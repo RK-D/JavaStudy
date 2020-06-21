@@ -1,4 +1,4 @@
-package multithreading.stopthreads;
+package multithreading.stopthreads.volatileTest;
 
 /**
  * @author rookie

@@ -1,6 +1,5 @@
-package multithreading.stopthreads;
+package multithreading.stopthreads.volatileTest;
 
-import java.util.TreeMap;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 

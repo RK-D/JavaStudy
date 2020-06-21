@@ -1,6 +1,4 @@
-package multithreading.stopthreads;
-
-import org.omg.CORBA.INITIALIZE;
+package multithreading.stopthreads.betterstop;
 
 /**
  * @author rookie
