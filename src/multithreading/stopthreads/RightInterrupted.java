@@ -1,4 +1,4 @@
-package multithreading.stopthreads.rightstop;
+package multithreading.stopthreads;
 
 /**
  * @author rookie
@@ -31,5 +31,6 @@ public class RightInterrupted {
         System.out.println("isInterrupted: " + threadOne.isInterrupted());
         threadOne.join();
         System.out.println("Main thread is over.");
+
     }
 }
