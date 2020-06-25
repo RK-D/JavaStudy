@@ -9,7 +9,7 @@ package multithreading.synchronizedtest;
  *
  */
 public class SynchronizedMethodObject2 implements Runnable{
-    static SynchronizedMethodObject instance = new SynchronizedMethodObject();
+    static SynchronizedMethodObject2 instance = new SynchronizedMethodObject2();
 
     public static void main(String[] args) throws InterruptedException{
         Thread thread1 = new Thread(instance);
@@ -24,7 +24,7 @@ public class SynchronizedMethodObject2 implements Runnable{
 
     @Override
     public void run() {
-
+        method();
     }
     public synchronized void method(){
         System.out.println("Modified form of object lock method "+ Thread.currentThread().getName());

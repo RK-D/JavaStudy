@@ -20,7 +20,7 @@ public class SynchronizedMethodObject implements Runnable {
      *
      * ？ 什么时候用自定义lock而不是this一个，为什么呢？
      * 业务复杂时使用，并行执行，线程通信，原生自己写不是很好，可以使用java自己定义的工具
-     * eg： CountDownLatch（倒计时门栓），信号量
+     * eg： CountDownLatch（倒计时门栓），
      * ps: synchronized 只能锁静态代码块，不管锁什么都是锁对象
      * 提一嘴 CyclicBarrier是栅栏闭锁
      *
