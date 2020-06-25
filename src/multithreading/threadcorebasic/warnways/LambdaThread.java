@@ -1,4 +1,4 @@
-package multithreading.threadcorebasic.wangways;
+package multithreading.threadcorebasic.warnways;
 
 /**
  * @author rookie
