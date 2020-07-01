@@ -1,4 +1,4 @@
-package multithreading.synchronizedtest.synchronizednature;
+package synchronizedtest.synchronizednature;
 
 /**
  * @author rookie

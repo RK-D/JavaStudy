@@ -1,12 +1,14 @@
-package multithreading.synchronizedtest;
+package synchronizedtest;
 
 /**
  * @author rookie
  * @version 1.0
- * @date 2020/6/23 11:57
+ * @date 2020/6/23 18:15
+ *
+ * 运用两种synchronized锁解决，并发问题
  */
-public class DisappearRequest1 implements  Runnable{
-    static DisappearRequest1 instance  = new DisappearRequest1();
+public class SolveDisappearRequest implements Runnable{
+    static SolveDisappearRequest instance  = new SolveDisappearRequest();
     static int i = 0;
     public static void main(String[] args) throws InterruptedException {
         Thread thread1 = new Thread(instance);
@@ -22,10 +24,33 @@ public class DisappearRequest1 implements  Runnable{
         System.out.println(i);
     }
 
+   /**
     @Override
-    public void run() {
+    public synchronized void run() {
         for (int j = 0; j < 100000; j++) {
             i++;
         }
     }
+   */
+
+ /**
+    @Override
+   public  void run() {
+       synchronized (this){
+           for (int j = 0; j < 100000; j++) {
+               i++;
+           }
+       }
+   }
+ */
+
+   @Override
+    public void run(){
+      synchronized (SolveDisappearRequest.class){
+          for (int j = 0; j < 100000; j++) {
+              i++;
+          }
+      }
+   }
+   //最后一种不能使用static方法在run，但是自己写的可以使用
 }

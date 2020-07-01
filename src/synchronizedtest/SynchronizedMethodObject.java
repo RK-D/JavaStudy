@@ -1,4 +1,4 @@
-package multithreading.synchronizedtest;
+package synchronizedtest;
 
 /**
  * @author rookie

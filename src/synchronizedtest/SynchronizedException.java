@@ -1,14 +1,16 @@
-package multithreading.synchronizedtest;
+package synchronizedtest;
 
 /**
  * @author rookie
  * @version 1.0
- * @date 2020/6/25 11:32
+ * @date 2020/6/25 11:37
  *
- * 同时访问静态synchronized和非静态synchronized方法
+ * 方法抛出异常后，会释放锁
+ * 1.一旦抛出了异常第二个线程会立刻进图同步方法说明锁已经释放
+ *
  */
-public class SynchronizedStaticAndNot implements Runnable{
-    static SynchronizedStaticAndNot instance = new SynchronizedStaticAndNot();
+public class SynchronizedException implements Runnable{
+    static SynchronizedException instance = new SynchronizedException();
 
 
     @Override
@@ -19,15 +21,15 @@ public class SynchronizedStaticAndNot implements Runnable{
             method2();
         }
     }
-    /**类锁，加static*/
-    public static synchronized void method1(){
-        System.out.println("static Use lock: "+Thread.currentThread().getName());
+
+    public synchronized void method1(){
+        System.out.println("1Use lock: "+Thread.currentThread().getName());
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("static Finish Use lock : "+Thread.currentThread().getName());
+        System.out.println("1Finish Use lock : "+Thread.currentThread().getName());
     }
     public  synchronized void  method2(){
         System.out.println("2 Use lock: "+Thread.currentThread().getName());
