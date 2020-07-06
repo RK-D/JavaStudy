@@ -1,4 +1,4 @@
-package multithreading.objectthreadbasic;
+package multithreading.objectthreadbasic.waitnotify;
 
 /**
  * @author rookie
