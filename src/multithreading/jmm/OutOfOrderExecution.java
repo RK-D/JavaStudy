@@ -8,9 +8,12 @@ import java.util.concurrent.CountDownLatch;
  *
  * 演示重排序的现象 “直到达到某个条件才停止”，测试小概率事件
  * x,y都为0才是重排序，一般几乎不会遇到 --》重排序后的可能(y=a ,a=1, x=b ,b=1)
+ *
+ *
  */
 public class OutOfOrderExecution {
-    private static int x = 0, y = 0, a = 0, b = 0;
+    //利用volatile修正重排序问题
+    private volatile static int x = 0, y = 0, a = 0, b = 0;
 
 
     public static void main(String[] args) throws InterruptedException {
